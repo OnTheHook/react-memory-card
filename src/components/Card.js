@@ -15,7 +15,7 @@ export const Card = (props) => {
 
   return (
       <div onClick={checkScore} className="card">
-          {props.num}
+          <img src={props.src} alt="" ></img>
       </div>
   )
 

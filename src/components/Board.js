@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Card } from "./Card";
-
+import Luffy from "../images/1-monkey-d-luffy-1660778366362.jpeg"
 export const Board = (props) => {
   const itemList = [
-    { num: 0, clicked: false },
-    { num: 1, clicked: false },
-    { num: 2, clicked: false },
-    { num: 3, clicked: false },
-    { num: 4, clicked: false },
-    { num: 5, clicked: false },
-    { num: 6, clicked: false },
-    { num: 7, clicked: false },
-    { num: 8, clicked: false },
-    { num: 9, clicked: false },
-    { num: 10, clicked: false },
-    { num: 11, clicked: false },
+    { num: 0, clicked: false, src: Luffy},
+    { num: 1, clicked: false, src: "../images/2-edward-elric-1660778366361.jpg"},
+    { num: 2, clicked: false, src: "../images/3-naruto-1660778366362.png" },
+    { num: 3, clicked: false, src: "../images/5-goku-1660778366361.jpg"},
+    { num: 4, clicked: false, src: "../images/6-spike-spiegel-1660778366361.png" },
+    { num: 5, clicked: false, src: "../images/7-vegeta-1660778366361.jpg" },
+    { num: 6, clicked: false, src: "../images/10-kenshin-himura-1660778366361.jpg" },
+    { num: 7, clicked: false, src: "../images/11-l-1660778366361.jpg" },
+    { num: 8, clicked: false, src: "../images/12-tanjiro-1660778366362.jpeg" },
+    { num: 9, clicked: false, src: "../images/16-guts-1660778366362.jpg" },
+    { num: 10, clicked: false, src: "../images/20-gon-1660778366362.jpeg" },
+    { num: 11, clicked: false, src: "../images/24-vash-1660778366361.jpg" },
   ];
 
   const [items, setItems] = useState(itemList);
@@ -66,6 +66,7 @@ export const Board = (props) => {
         toggleClicked={toggleClicked.bind(null, item.num)}
         resetClicked={resetClicked}
         resetScore={props.reset}
+        src={item.src}
       />
     );
   });
