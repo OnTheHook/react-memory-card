@@ -20,7 +20,7 @@ const App = (props) => {
   return (
     <div className="App">
       <Scoreboard score={score} best={best}/>
-      <Board increaseScore={onChangeScore} reset={onReset} />
+      <Board increaseScore={onChangeScore} reset={onReset} score={score}/>
     </div>
   );
 };

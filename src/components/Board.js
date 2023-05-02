@@ -2,69 +2,77 @@ import React, { useState, useEffect, useRef } from "react";
 import { Card } from "./Card";
 
 export const Board = (props) => {
-  const [clickedArr, setClickedArr] = useState(Array(12).fill(false));
-  const [clickCounter, setClickCounter] = useState(0);
+  const itemList = [
+    { num: 0, clicked: false },
+    { num: 1, clicked: false },
+    { num: 2, clicked: false },
+    { num: 3, clicked: false },
+    { num: 4, clicked: false },
+    { num: 5, clicked: false },
+    { num: 6, clicked: false },
+    { num: 7, clicked: false },
+    { num: 8, clicked: false },
+    { num: 9, clicked: false },
+    { num: 10, clicked: false },
+    { num: 11, clicked: false },
+  ];
+
+  const [items, setItems] = useState(itemList);
 
   const resetClicked = () => {
-    setClickedArr(() => {
-      return Array(12).fill(false);
+    setItems((prev) => {
+      return prev.map((item) => {
+        return { ...item, clicked: false };
+      });
     });
   };
 
   const toggleClicked = (num) => {
-    if (!clickedArr[num]) {
-      setClickedArr((clickedArr) => {
-        const newClickedArr = [...clickedArr];
-        newClickedArr[num] = true;
-        return newClickedArr;
-      });
-      setClickCounter((prev) => {
-        return prev + 1;
-      });
-    } else {
-      resetClicked();
+    for (let i = 0; i < items.length; i++) {
+      if (items[i].num === num) {
+        if (!items[i].clicked) {
+          setItems((prev) => {
+            const newArr = [...prev];
+            newArr[i].clicked = true;
+            return newArr;
+          });
+        } else {
+          resetClicked();
+        }
+      }
     }
   };
 
-  const shuffleArray = (array) => {
-    const newArr = [...array]
-    for (var i = newArr.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = newArr[i];
-      newArr[i] = newArr[j];
-      newArr[j] = temp;
-    }
-    return newArr
+  const shuffleArray = () => {
+    setItems((prev) => {
+      const newArr = [...prev];
+      for (let i = newArr.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let temp = newArr[i];
+        newArr[i] = newArr[j];
+        newArr[j] = temp;
+      }
+      return newArr;
+    });
   };
 
-  const numbers = [...Array(12).keys()];
-
-  let cards = numbers.map((num) => {
+  let cards = items.map((item) => {
     return (
       <Card
-        key={num}
-        num={num}
-        clicked={clickedArr[num]}
+        key={item.num}
+        num={item.num}
+        clicked={item.clicked}
         increaseScore={props.increaseScore}
-        toggleClicked={toggleClicked.bind(null, num)}
+        toggleClicked={toggleClicked.bind(null, item.num)}
         resetClicked={resetClicked}
         resetScore={props.reset}
       />
     );
   });
 
-  cards = useRef(cards)
-
   useEffect(() => {
-    console.log("Use effect triggered");
-    cards.current = shuffleArray(cards.current)
-  }, [clickCounter]);
-  // shuffleArray(cards)
+    shuffleArray();
+  }, [props.score]);
 
-  return (
-    <div>
-      Clicks: {clickCounter}
-      {cards.current}
-    </div>
-  );
+  return <div>{cards}</div>;
 };
