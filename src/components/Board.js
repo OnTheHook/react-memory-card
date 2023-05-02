@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Card } from "./Card";
 
 export const Board = (props) => {
   const [clickedArr, setClickedArr] = useState(Array(12).fill(false));
+  const [clickCounter, setClickCounter] = useState(0);
 
   const resetClicked = () => {
     setClickedArr(() => {
@@ -17,22 +18,28 @@ export const Board = (props) => {
         newClickedArr[num] = true;
         return newClickedArr;
       });
+      setClickCounter((prev) => {
+        return prev + 1;
+      });
     } else {
       resetClicked();
     }
   };
 
   const shuffleArray = (array) => {
-    for (var i = array.length - 1; i > 0; i--) {
+    const newArr = [...array]
+    for (var i = newArr.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+      var temp = newArr[i];
+      newArr[i] = newArr[j];
+      newArr[j] = temp;
     }
+    return newArr
   };
+
   const numbers = [...Array(12).keys()];
 
-  const cards = numbers.map((num) => {
+  let cards = numbers.map((num) => {
     return (
       <Card
         key={num}
@@ -45,5 +52,19 @@ export const Board = (props) => {
       />
     );
   });
-  return <div>{cards}</div>;
+
+  cards = useRef(cards)
+
+  useEffect(() => {
+    console.log("Use effect triggered");
+    cards.current = shuffleArray(cards.current)
+  }, [clickCounter]);
+  // shuffleArray(cards)
+
+  return (
+    <div>
+      Clicks: {clickCounter}
+      {cards.current}
+    </div>
+  );
 };
