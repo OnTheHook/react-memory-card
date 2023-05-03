@@ -1,5 +1,7 @@
-.card {
-  height: 50px;
-  width: 50px;
-  border: 1px black solid;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* img {
+  max-height: 250px;
+} */
