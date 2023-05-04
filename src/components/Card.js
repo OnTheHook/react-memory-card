@@ -15,14 +15,10 @@ export const Card = (props) => {
   return (
     <div
       onClick={checkScore}
-      className="rounded-lg bg-red-400 p-4 border-box w-96 h-60 flex-none"
+      className="rounded-lg bg-gradient-to-r from-end-grad to-start-grad p-4 border-box w-96 h-60 flex-none hover:drop-shadow-3xl hover:text-white hover:cursor-pointer"
     >
       <div className="h-40 border-box overflow-hidden rounded-lg">
-        <img
-          src={props.src}
-          alt={props.name}
-          className="rounded-lg"
-        />
+        <img src={props.src} alt={props.name} className="rounded-lg" />
       </div>
       <div>
         <h2>{props.name}</h2>

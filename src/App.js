@@ -18,10 +18,10 @@ const App = (props) => {
   };
 
   return (
-    <div className="App flex flex-1 flex-col h-full w-full items-center font-bangers">
-      <div className="flex flex-1 justify-around items-center w-full text-xl"> 
+    <div className="App flex flex-1 flex-col w-full items-stretch font-bangers min-h-screen">
+      <div className="flex flex-1 justify-around items-center w-full text-xl bg-header-black text-white flex-none p-4"> 
         <div>
-          <h1 className="text-6xl">Anime Memory Card Game</h1>
+          <h1 className="text-6xl text-text-orange">Anime Memory Card Game</h1>
           <p>
             Get points by clicking on an image but don't click on any more than
             once!
