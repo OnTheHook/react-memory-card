@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/react-memory-card/static/css/main.2f941e59.css",
+    "main.js": "/react-memory-card/static/js/main.861f16e5.js",
+    "static/js/787.ab9c8d4c.chunk.js": "/react-memory-card/static/js/787.ab9c8d4c.chunk.js",
+    "static/media/3-naruto-1660778366362.png": "/react-memory-card/static/media/3-naruto-1660778366362.b34f5f1ffe60cbd28684.png",
+    "static/media/6-spike-spiegel-1660778366361.png": "/react-memory-card/static/media/6-spike-spiegel-1660778366361.e0ce0d63db7486ea261f.png",
+    "static/media/12-tanjiro-1660778366362.jpeg": "/react-memory-card/static/media/12-tanjiro-1660778366362.7fa8963748e8ad03a4dd.jpeg",
+    "static/media/7-vegeta-1660778366361.jpg": "/react-memory-card/static/media/7-vegeta-1660778366361.d517848ce4a070266061.jpg",
+    "static/media/20-gon-1660778366362.jpeg": "/react-memory-card/static/media/20-gon-1660778366362.7a37ecab0b7b92969fa4.jpeg",
+    "static/media/1-monkey-d-luffy-1660778366362.jpeg": "/react-memory-card/static/media/1-monkey-d-luffy-1660778366362.9524272bf5a909d4743b.jpeg",
+    "static/media/2-edward-elric-1660778366361.jpg": "/react-memory-card/static/media/2-edward-elric-1660778366361.cbc70ebea056747790b5.jpg",
+    "static/media/5-goku-1660778366361.jpg": "/react-memory-card/static/media/5-goku-1660778366361.92977689988811262d77.jpg",
+    "static/media/16-guts-1660778366362.jpg": "/react-memory-card/static/media/16-guts-1660778366362.baca8b6e8b9b337e50ae.jpg",
+    "static/media/10-kenshin-himura-1660778366361.jpg": "/react-memory-card/static/media/10-kenshin-himura-1660778366361.154cd84c362ebe266bae.jpg",
+    "static/media/24-vash-1660778366361.jpg": "/react-memory-card/static/media/24-vash-1660778366361.3417ab8a14a504ec419d.jpg",
+    "static/media/11-l-1660778366361.jpg": "/react-memory-card/static/media/11-l-1660778366361.41dbb7c68e60606578cb.jpg",
+    "index.html": "/react-memory-card/index.html",
+    "main.2f941e59.css.map": "/react-memory-card/static/css/main.2f941e59.css.map",
+    "main.861f16e5.js.map": "/react-memory-card/static/js/main.861f16e5.js.map",
+    "787.ab9c8d4c.chunk.js.map": "/react-memory-card/static/js/787.ab9c8d4c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2f941e59.css",
+    "static/js/main.861f16e5.js"
+  ]
+}
