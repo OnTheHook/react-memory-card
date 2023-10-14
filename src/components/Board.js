@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Card } from "./Card";
 import luffy from "../images/1-monkey-d-luffy-1660778366362.jpeg";
 import edward from "../images/2-edward-elric-1660778366361.jpg";
